@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <center>
+        <HBox prefHeight="100.0" prefWidth="704.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="tvSim" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="370.0" prefWidth="688.0" HBox.hgrow="ALWAYS">
+                    <columns>
+
+                        <TableColumn fx:id="dia" prefWidth="75.0" text="Dia" />
+                        <TableColumn fx:id="semana" prefWidth="50.0" text="Semana" />
+                        <TableColumn fx:id="random1" prefWidth="75.0" text="Random" />
+                        <TableColumn fx:id="demanda" prefWidth="75.0" text="Demanda" />
+                        <TableColumn fx:id="venta" prefWidth="75.0" text="Venta" />
+                        <TableColumn fx:id="stockRemanente" prefWidth="150.0" text="Stock Al Final del Dia" />
+                        <TableColumn fx:id="almacenamiento" prefWidth="170.0" text="Costo de Almacenamiento" />
+                        <TableColumn fx:id="almacenamientoAcumulado" prefWidth="200.0" text="Costo de Almacenamiento Acumulado" />
+                        <TableColumn fx:id="pedido" prefWidth="150.0" text="Costo de Pedido" />
+                        <TableColumn fx:id="pedidoAcumulado" prefWidth="200.0" text="Costo de Pedido Acumulado" />
+                        <TableColumn fx:id="diaAgotamiento1" prefWidth="150.0" text="Dia 1 Agotamiento" />
+                        <TableColumn fx:id="diaAgotamiento2" prefWidth="150.0" text="Dia 2 Agotamiento" />
+                        <TableColumn fx:id="diaAgotamiento3" prefWidth="150.0" text="Dia 3 Agotamiento" />
+                        <TableColumn fx:id="diaAgotamiento4" prefWidth="150.0" text="Dia 4 Agotamiento" />
+                        <TableColumn fx:id="diaAgotamiento5" prefWidth="150.0" text="Dia 5 Agotamiento" />
+                        <TableColumn fx:id="diaAgotamiento6" prefWidth="150.0" text="Dia 6 Agotamiento" />
+                        <TableColumn fx:id="diaAgotamiento7" prefWidth="150.0" text="Dia 7 Agotamiento" />
+                        <TableColumn fx:id="agotamiento" prefWidth="150.0" text="Costo de Agotamiento" />
+                        <TableColumn fx:id="agotamientoAcumulado" prefWidth="200.0" text="Costo de Agotamiento Acumulado" />
+                        <TableColumn fx:id="random2" prefWidth="75.0" text="Random" />
+                        <TableColumn fx:id="demora" prefWidth="75.0" text="Demora" />
+                        <TableColumn fx:id="stockDisponible" prefWidth="150.0" text="Stock Disponible" />
+                    </columns>
+                </TableView>
+            </children>
+        </HBox>
+    </center>
+    <bottom>
+        <AnchorPane fx:id="anchorPane" prefHeight="82.0" prefWidth="593.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text layoutX="27.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo Total de Pedido" wrappingWidth="150.0263671875" />
+                <Text layoutX="27.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo Total de Almacenamiento" wrappingWidth="242.0263671875" />
+                <Label fx:id="costoTotalPedido" layoutX="280.0" layoutY="43.0" text="0" />
+                <Label fx:id="costoTotalAlmacenamiento" layoutX="280.0" layoutY="16.0" text="0" />
+                <Text layoutX="400.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo Total por Agotamiento" wrappingWidth="250.0263671875" />
+                <Label fx:id="costoTotalAgotamiento" layoutX="614.0" layoutY="16.0" prefHeight="18.0" prefWidth="61.0" text="0" />
+                <Text layoutX="400.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo Total" wrappingWidth="193.0263671875" />
+                <Label fx:id="costoTotal" layoutX="615.0" layoutY="43.0" maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="100.0" text="0" />
+                <Button fx:id="btnsimularPolitica1" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" onAction="#simulacionOnActionPolitica1" text="Simulacion Politica 1" />
+                <Button fx:id="btnsimularPolitica2" layoutX="900.0" layoutY="45.0" mnemonicParsing="false" onAction="#simulacionOnActionPolitica2" text="Simulacion Politica 2" />
+                <TextField fx:id="txtDiaHasta" layoutX="801.0" layoutY="45.0" prefHeight="28.0" prefWidth="69.0" />
+                <TextField fx:id="txtDiaDesde" layoutX="801.0" layoutY="10.0" prefHeight="28.0" prefWidth="69.0" />
+                <Text layoutX="725.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dia Desde" wrappingWidth="100" />
+                <Text layoutX="1080.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semanas a Simular" wrappingWidth="130" />
+                <TextField fx:id="txtSemanasSimuladas" layoutX="1080.0" layoutY="45.0" prefHeight="28.0" prefWidth="69.0" />
+                <Text layoutX="725.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dia Hasta" wrappingWidth="100" />
+            </children>
+        </AnchorPane>
+    </bottom>
+   <top>
+      <Pane prefHeight="42.0" prefWidth="593.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
